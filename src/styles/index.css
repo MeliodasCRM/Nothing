@@ -1,3 +1,209 @@
-/* 
-    General Styles
-*/
+/* Fondo oscuro galáctico para toda la aplicación */
+body {
+    background-color: #0c0c0c;
+    background-image: radial-gradient(circle, #111 0%, #000 100%);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Efectos visuales para los títulos */
+h1, h2, h3, .card-title {
+    font-family: 'Star Jedi', sans-serif;
+    color: #1e90ff; /* Azul metálico */
+    text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px rgba(30, 144, 255, 0.7);
+}
+
+/* Navbar estilo Star Wars */
+.navbar {
+    background-color: #1d1d1d;
+    border-bottom: 2px solid #1e90ff; /* Azul metálico */
+    box-shadow: 0 4px 8px rgba(30, 144, 255, 0.5);
+}
+
+.navbar-brand {
+    color: #1e90ff; /* Azul metálico */
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #1e90ff, 0 0 10px rgba(30, 144, 255, 0.8);
+}
+
+.navbar-brand:hover {
+    color: #4682b4; /* Azul más oscuro */
+}
+
+.navbar .dropdown-menu {
+    background-color: #333;
+    border: 1px solid #1e90ff; /* Azul metálico */
+}
+
+.navbar .dropdown-item {
+    color: #fff;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #1e90ff; /* Azul metálico */
+    color: #000;
+}
+
+/* Botones personalizados Star Wars */
+.btn-primary, .btn-outline-warning {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e90ff; /* Azul metálico */
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Se quitan los hover de los botones de favoritos */
+.btn-primary:hover, .btn-outline-warning:hover {
+    background-color: #4682b4; /* Azul más oscuro */
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Efectos de favoritos */
+.btn-warning, .btn-outline-warning {
+    border: 1px solid #1e90ff; /* Azul metálico */
+    color: #1e90ff; /* Azul metálico */
+}
+
+/* Se quita el hover de la estrella y botón de agregar favoritos */
+.btn-warning, .btn-outline-warning {
+    background-color: #1e90ff; /* Azul metálico */
+    color: #000;
+}
+
+/* Estilos para las cartas */
+.card {
+    background-color: #222;
+    border: 2px solid #1e90ff; /* Azul metálico */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(30, 144, 255, 0.8);
+}
+
+.card-img-top {
+    border-bottom: 2px solid #1e90ff; /* Azul metálico */
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Estilo para los detalles de las entidades */
+.container {
+    max-width: 1200px;
+}
+
+.container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1e90ff; /* Azul metálico */
+}
+
+.container .card-body {
+    color: #fff;
+}
+
+/* Enlaces */
+a {
+    color: #1e90ff; /* Azul metálico */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4682b4; /* Azul más oscuro */
+}
+
+/* Estilo responsive para adaptarse a todos los dispositivos */
+@media (max-width: 1200px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-body {
+        font-size: 0.9rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animaciones de carga */
+.spinner-border {
+    color: #1e90ff; /* Azul metálico */
+}
+
+.spinner-border-sm {
+    width: 40px;
+    height: 40px;
+}
+
+/* Detalles de las entidades */
+.entity-details {
+    background-color: #1c1c1c;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(30, 144, 255, 0.6);
+}
+
+.entity-details img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.entity-details .btn {
+    margin-top: 10px;
+}
+
+/* Estilo para la lista de favoritos */
+.favorite-list {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(30, 144, 255, 0.5);
+    padding: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}

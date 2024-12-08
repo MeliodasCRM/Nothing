@@ -5,33 +5,40 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { EntityList } from "./views/EntityList";
+import { EntityDetail } from "./views/EntityDetail";
 
-//create your first component
+import { AppContextProvider } from "./store/appContext";
+
 const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-	const basename = process.env.BASENAME || "";
-
-	return (
-		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
-	);
+    return (
+        <div>
+            <AppContextProvider>
+                <BrowserRouter>
+                    <ScrollToTop>
+                        <Navbar />
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/demo" element={<Demo />} />
+                            <Route path="/single/:theid" element={<Single />} />
+                            
+                            {/* Nuevas rutas de Star Wars */}
+                            <Route path="/people" element={<EntityList type="people" />} />
+                            <Route path="/planets" element={<EntityList type="planets" />} />
+                            <Route path="/vehicles" element={<EntityList type="vehicles" />} />
+                            
+                            <Route path="/people/:uid" element={<EntityDetail type="people" />} />
+                            <Route path="/planets/:uid" element={<EntityDetail type="planets" />} />
+                            <Route path="/vehicles/:uid" element={<EntityDetail type="vehicles" />} />
+                        </Routes>
+                        <Footer />
+                    </ScrollToTop>
+                </BrowserRouter>
+            </AppContextProvider>
+        </div>
+    );
 };
 
-export default injectContext(Layout);
+export default Layout;
